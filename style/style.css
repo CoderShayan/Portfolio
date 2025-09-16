@@ -63,7 +63,7 @@ header {
   text-decoration: none;
   font-weight: 500;
   position: relative;
-  transition: color 极速3s;
+  transition: color 3s;
 }
 
 .nav-links a::after {
@@ -362,13 +362,15 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
+  border-right: 3px solid #ff9800;
+  padding-right: 1.5rem;
 }
 
 .skill-card {
   background: #fff;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4极速px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
 
@@ -417,6 +419,8 @@ header {
 
 .certifications-text {
   flex: 2;
+  border-left: 3px solid #ff9800;
+  padding-left: 1.5rem;
 }
 
 .certifications-icon {
@@ -501,6 +505,8 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
+  border-right: 3px solid #ff9800;
+  padding-right: 1.5rem;
 }
 
 .project-card {
@@ -553,7 +559,7 @@ header {
   background: #f1f1f1;
   padding: 0.3rem 0.7rem;
   border-radius: 20px;
-  font-size: 0.85极速rem;
+  font-size: 0.85rem;
   color: #555;
 }
 
@@ -634,7 +640,7 @@ footer {
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 5px 15px rgba(0,0,0,极速0.3);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   animation: fadeIn 0.3s ease;
 }
 
