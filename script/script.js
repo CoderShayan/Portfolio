@@ -4,7 +4,6 @@
 function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("active");
 }
-//###############################
 
 // ===============================
 // Contact Modal
@@ -38,7 +37,6 @@ if (contactBtn && contactModal && closeBtn) {
     }
   });
 }
-//###############################
 
 // ===============================
 // Collapse mobile menu on link click
@@ -48,7 +46,6 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     document.getElementById("navLinks").classList.remove("active");
   });
 });
-//###############################
 
 // ===============================
 // Smooth Scrolling for anchors
@@ -64,7 +61,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-//###############################
 
 // ===============================
 // Animation on scroll
