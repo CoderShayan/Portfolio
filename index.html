@@ -49,35 +49,98 @@
   ================
     Hero Section
   ================ -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h2 class="intro">Hello, I'm</h2>
-        <h2 class="name">Mohd Shayan Anwar</h2>
-        <p class="tagline">BCA Graduate | Learner | Tech Enthusiast</p>
-        <a href="#about" class="btn">Explore More</a>
-      </div>
-      <div class="hero-image">
-        <img src="https://media.licdn.com/dms/image/v2/D4E03AQEdzbD5W_C-TA/profile-displayphoto-shrink_200_200/B4EZS1fl3eGgAY-/0/1738211746669?e=2147483647&v=beta&t=MNpPgqU9M-yIoVGjam7M80nnnTlT6f48TkyNs3fP0Qk" 
-        alt="Profile Picture">
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h2 class="intro">Hello, I'm</h2>
+      <h2 class="name">Mohd Shayan Anwar</h2>
+      <p class="tagline">BCA Graduate | Learner | Tech Enthusiast</p>
+      <p class="hero-description">Passionate about creating innovative solutions and expanding my knowledge in technology.</p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn">
+          <i class="fas fa-user"></i> Explore More
+        </a>
+        <a href="javascript:void(0);" id="heroContactBtn" class="btn btn-secondary">
+          <i class="fas fa-paper-plane"></i> Contact Me
+        </a>
       </div>
     </div>
-  </section>
+    <div class="hero-image">
+      <div class="image-wrapper">
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQEdzbD5W_C-TA/profile-displayphoto-shrink_200_200/B4EZS1fl3eGgAY-/0/1738211746669?e=2147483647&v=beta&t=MNpPgqU9M-yIoVGjam7M80nnnTlT6f48TkyNs3fP0Qk" 
+             alt="Mohd Shayan Anwar">
+        <div class="image-overlay"></div>
+        <div class="floating-icons">
+          <div class="icon html">
+            <i class="fab fa-html5"></i>
+          </div>
+          <div class="icon css">
+            <i class="fab fa-css3-alt"></i>
+          </div>
+          <div class="icon js">
+            <i class="fab fa-js"></i>
+          </div>
+          <div class="icon python">
+            <i class="fab fa-python"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-down">
+    <span>Scroll Down</span>
+    <div class="arrow">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+</section>
 
 <!--
-  =================
-    Contact Modal
-  ================= -->
+  ==========================
+    Contact Modal (Compact)
+  ========================== -->
   <div id="contactModal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content compact-modal">
       <span class="close">&times;</span>
-      <h2>Contact Information</h2>
-      <p><i class="fas fa-user"></i> Mohd Shayan Anwar</p>
-      <p><i class="fas fa-map-marker-alt"></i> Kanpur, U.P.</p>
-      <p><i class="fas fa-phone"></i> +91-9621021063</p>
-      <p><i class="fas fa-envelope"></i> its.mshayan@gmail.com</p>
-      <p><i class="fab fa-linkedin"></i> linkedin.com/in/mohdshayananwar</p>
-      <p><i class="fab fa-github"></i> github.com/mohshayananwar</p>
+
+      <h2><i class="fas fa-user"></i> Contact Info.</h2>
+
+      <div class="compact-contact-container">
+        <!-- Contact Info -->
+        <div class="compact-contact-info">
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Kanpur, Uttar Pradesh</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <span>+91-9621021063</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <span>its.mshayan@gmail.com</span>
+          </div>
+          <div class="info-item">
+            <i class="fab fa-linkedin"></i>
+            <span>linkedin.com/in/mohdshayananwar</span>
+          </div>
+          <div class="info-item">
+            <i class="fab fa-github"></i>
+            <span>github.com/CoderShayan</span>
+          </div>
+        </div>
+
+        <!-- Quick Action Buttons -->
+        <div class="action-buttons">
+          <a href="mailto:its.mshayan@gmail.com" class="action-btn email">
+            <i class="fas fa-envelope"></i> Send Email
+          </a>
+          <a href="tel:+919621021063" class="action-btn call">
+            <i class="fas fa-phone"></i> Call Now
+          </a>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -317,30 +380,92 @@
       </div>
     </div>
   </section>
+
+<!--
+  ====================
+    Message Box Modal
+  ==================== -->
+  <div id="messageModal" class="modal">
+    <div class="modal-content message-modal">
+      <span class="close">&times;</span>
+      <h2><i class="fas fa-envelope"></i> Send Message</h2>
+      <form id="messageForm">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" rows="5" placeholder="Your Message..." required></textarea>
+        </div>
+        <button type="submit" class="btn message-btn">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+  </div>
   
+  <!-- Message Button -->
+  <div class="message-float-btn" id="messageFloatBtn">
+    <i class="fas fa-comment"></i>
+  </div>
 
 <!--
   ============
     Footer
   ============ -->
   <footer>
-    <p>© 2025 Mohd Shayan Anwar | All Rights Reserved</p>
-    <div class="socials">
-      <a href="mailto:mohdshayananwar@gmail.com" target="_blank" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/mohdshayananwar" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/CoderShayan" target="_blank" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://instagram.com/https.shayan.ig" target="_blank" title="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.facebook.com/mohammadshayan.anwar" target="_blank" title="Facebook">
-        <i class="fab fa-facebook"></i>
-      </a>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>&lt;/&gt; <span>ShayanPortfolio</span></h3>
+        <p>Transforming ideas into digital reality through code and creativity.</p>
+        <div class="footer-socials">
+          <a href="mailto:its.mshayan@gmail.com" target="_blank" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mohdshayananwar" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/CoderShayan" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://instagram.com/https.shayan.ig" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/mohammadshayan.anwar" target="_blank" title="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+          <li><a href="#education"><i class="fas fa-chevron-right"></i> Education</a></li>
+          <li><a href="#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
+          <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <ul class="contact-info">
+          <li><i class="fas fa-envelope"></i> its.mshayan@gmail.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> Kanpur, Uttar Pradesh</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mohd Shayan Anwar. All Rights Reserved.</p>
+      
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollToTop">
+      <i class="fas fa-arrow-up"></i>
     </div>
   </footer>
 
