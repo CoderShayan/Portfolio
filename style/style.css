@@ -8,11 +8,13 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: #f8f9fa;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.7;
 }
+
+h2 { font-weight: 700; letter-spacing: 0.5px; }
 
 html {
   scroll-behavior: smooth;
@@ -171,10 +173,10 @@ header {
 }
 
 .hero-text .name {
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #ff9800;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
 }
 
@@ -241,8 +243,8 @@ header {
 
 .hero-image img {
   width: 280px;
+  height: 280px;
   max-width: 100%;
-  height: auto;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #ff9800;
@@ -464,6 +466,24 @@ header {
   text-align: center;
 }
 
+/* ===============================
+   Contact Info Link Underline Fix
+================================= */
+.compact-contact-info a {
+  text-decoration: none;
+}
+
+.compact-contact-info a:hover {
+  text-decoration: underline;
+}
+
+.info-item a {
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
 .info-item span {
   font-size: 0.95rem;
   color: #333;
@@ -523,403 +543,253 @@ header {
 /* ===============================
    Sections
 ================================= */
+/* ===============================
+   Modern Sections Design
+================================= */
+
+/* General Section Wrapper */
 .section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 3rem 2rem;
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 4rem 2rem;
   position: relative;
-  text-align: center;
 }
 
+/* Section Headings with Background Text */
+.section h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  color: #111;
+  z-index: 2;
+}
 .section h2::after {
-  content: "";
-  width: 60px;
-  height: 4px;
-  background: #ff9800;
-  display: block;
-  margin: 0.5rem auto 0;
+  content: attr(data-title); /* Background watermark */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(0,0,0,0.05);
+  z-index: -1;
+  pointer-events: none;
+}
+.section h2 i { color: #ff9800; margin-right: 0.5rem; }
+
+/* ===============================
+   Section Layouts
+================================= */
+.section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.section-content.reverse {
+  flex-direction: row-reverse;
+}
+
+.section:nth-child(even) {
+  background: #f9f9f9;
+}
+
+
+/* Icon Blocks */
+.section-icon {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-icon i {
+  font-size: 4rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ff9800, #e67e00);
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(255,152,0,0.4);
+  transition: transform 0.4s ease;
+}
+.section-icon i:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Text / Content Area */
+.section-text {
+  flex: 2;
+}
+.section-text p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
 /* ===============================
-   Cards
+   Card Styles
 ================================= */
 .card {
   background: #fff;
-  padding: 1.5rem;
-  margin: 1rem 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  padding: 1.8rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-left: 5px solid #ff9800;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
 }
-
-/* About Section */
-.about-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.about-text {
-  flex: 2;
-  font-size: 1.1rem;
-}
-
-.about-icon {
-  flex: 1;
-  text-align: center;
-  font-size: 5rem;
-  color: #ff9800;
-  transition: transform 0.3s;
-}
-
-.about-icon:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-/* Education Section */
-.education-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.education-text {
-  flex: 2;
-}
-
-.education-icon {
-  flex: 1;
-  text-align: center;
-  font-size: 5rem;
-  color: #ff9800;
-  transition: transform 0.3s;
-}
-
-.education-icon:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.edu-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  border-left: 3px solid #ff9800;
-  padding-left: 1.5rem;
-}
-
-.edu-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  background: #fff;
-  padding: 1.2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.edu-card:hover {
-  transform: translateX(10px);
-}
-
-.edu-icon {
-  font-size: 2rem;
-  color: #ff9800;
-  min-width: 40px;
-  text-align: center;
-}
-
-.edu-info h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.3rem;
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
   color: #111;
 }
-
-.edu-info p {
-  font-size: 1rem;
+.card p {
   color: #555;
-}
-
-/* Skills Section */
-.skills-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.skills-text {
-  flex: 2;
-}
-
-.skills-icon {
-  flex: 1;
-  text-align: center;
-  font-size: 5rem;
-  color: #ff9800;
-  transition: transform 0.3s;
-}
-
-.skills-icon:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  border-right: 3px solid #ff9800;
-  padding-right: 1.5rem;
-}
-
-.skill-card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-}
-
-.skill-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.8rem;
-  color: #111;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.skill-card ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.skill-card ul li {
-  margin: 0.4rem 0;
-  padding-left: 1.5rem;
-  position: relative;
   font-size: 1rem;
-  color: #555;
+  line-height: 1.6;
 }
 
-.skill-card ul li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #ff9800;
-  font-weight: bold;
-}
-
-/* Certifications Section */
-.certifications-container {
+/* ===============================
+   Skills (Tag Cloud Style)
+================================= */
+.skills-tags {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 0.7rem;
 }
-
-.certifications-text {
-  flex: 2;
-  border-left: 3px solid #ff9800;
-  padding-left: 1.5rem;
-}
-
-.certifications-icon {
-  flex: 1;
-  text-align: center;
-  font-size: 5rem;
+.skills-tags span {
+  background: #fff5e6;
+  border: 1px solid #ff9800;
   color: #ff9800;
-  transition: transform 0.3s;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.skills-tags span:hover {
+  background: #ff9800;
+  color: #fff;
 }
 
-.certifications-icon:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.cert-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.cert-card {
-  background: #fff;
-  padding: 1.2rem 1.5rem;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.cert-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.cert-icon {
-  font-size: 2rem;
-  color: #ff9800;
-  min-width: 40px;
-}
-
-.cert-info h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.3rem;
-  color: #111;
-}
-
-.cert-info p {
-  font-size: 1rem;
-  color: #555;
-}
-
-/* Projects Section */
-.projects-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.projects-text {
-  flex: 2;
-}
-
-.projects-icon {
-  flex: 1;
-  text-align: center;
-  font-size: 5rem;
-  color: #ff9800;
-  transition: transform 0.3s;
-}
-
-.projects-icon:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.project-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  border-right: 3px solid #ff9800;
-  padding-right: 1.5rem;
-}
-
+/* ===============================
+   Projects (New Design)
+================================= */
 .project-card {
+  display: flex;
+  align-items: stretch;
+  gap: 1.5rem;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,152,0,0.2);
+  transition: all 0.4s ease;
 }
-
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+  border-color: #ff9800;
 }
 
+/* Image / Icon Side */
 .project-img {
-  width: 100%;
-  height: 180px;
-  background: #f0f0f0;
+  flex: 1;
+  min-width: 180px;
+  background: linear-gradient(135deg, #ff9800, #e67e00);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #777;
-  font-size: 1.2rem;
+  font-size: 2rem;
+  color: #fff;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+.project-card:hover .project-img {
+  background: linear-gradient(135deg, #e67e00, #ff9800);
 }
 
+/* Info Side */
 .project-info {
-  padding: 1.5rem;
+  flex: 3;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
 .project-info h3 {
-  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: #111;
+  margin-bottom: 0.8rem;
 }
-
 .project-info p {
   color: #555;
   margin-bottom: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
+/* Tech Badges */
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.6rem;
 }
-
 .project-tech span {
-  background: #f1f1f1;
-  padding: 0.3rem 0.7rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  color: #555;
-}
-
-.project-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.project-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 1rem;
-  background: #ff9800;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  transition: background 0.3s;
-}
-
-.project-links a:hover {
-  background: #e68900;
-}
-
-.project-links a.outline {
-  background: transparent;
+  background: #fff5e6;
   border: 1px solid #ff9800;
   color: #ff9800;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.project-tech span:hover {
+  background: #ff9800;
+  color: #fff;
 }
 
-.project-links a.outline:hover {
-  background: #fff5e6;
+/* Responsive */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+  }
+  .project-img {
+    min-height: 160px;
+    width: 100%;
+  }
+}
+
+
+/* ===============================
+   Responsive
+================================= */
+@media (max-width: 900px) {
+  .section-content,
+  .section-content.reverse {
+    flex-direction: column;
+  }
+  .section-icon {
+    margin-bottom: 1.5rem;
+  }
+  .section h2::after {
+    font-size: 4rem;
+  }
 }
 
 /* ===============================
    Message Box Styles
 ================================= */
+
+/* Floating Button */
 .message-float-btn {
   position: fixed;
   bottom: 45px;
@@ -927,7 +797,7 @@ header {
   width: 50px;
   height: 50px;
   background: #ff9800;
-  color: white;
+  color: #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -944,23 +814,64 @@ header {
   transform: scale(1.1);
 }
 
+/* ===============================
+   Compact Contact Form Styling
+================================= */
 .message-modal {
+  border-radius: 10px;
   max-width: 450px;
+  padding: 0;
+}
+
+.form-header {
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.form-header i {
+  font-size: 1.8rem;
+  color: #ff9800;
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  word-spacing: 2.5px;
+}
+
+.form-header h2 {
+  margin-bottom: 0.2rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.form-header h2::after {
+  display: none;
+}
+
+.message-modal form {
+  padding: 1.5rem;
 }
 
 .form-group {
   margin-bottom: 1.2rem;
+  position: relative;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 1rem;
-  transition: border-color 0.3s;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
 }
 
 .form-group input:focus,
@@ -968,11 +879,31 @@ header {
   outline: none;
   border-color: #ff9800;
   box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.2);
+  background: #fff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #95a5a6;
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 100px;
+}
+
+.form-group i {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
+
+.form-group textarea + i {
+  top: 1.2rem;
+  transform: none;
 }
 
 .message-btn {
@@ -982,33 +913,61 @@ header {
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
+  font-weight: 600;
   padding: 0.9rem;
+  background: #e68900;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
 }
 
-/* Success message */
-.message-success {
-  display: none;
-  background: #d4edda;
-  color: #155724;
-  padding: 1rem;
-  border-radius: 5px;
-  margin-top: 1rem;
-  text-align: center;
+.message-btn:hover {
+  background: #e67e00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .message-float-btn {
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+@media (max-width: 480px) {
+  .message-modal {
+    width: 95%;
+    margin: 0.5rem;
   }
   
-  .message-modal {
-    width: 90%;
-    padding: 1.5rem;
+  .form-header {
+    padding: 1.2rem;
+  }
+  
+  .form-header i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .message-modal form {
+    padding: 1.2rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.7rem 0.9rem 0.7rem 2.3rem;
+    font-size: 0.9rem;
+  }
+  
+  .form-group i {
+    left: 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .message-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -1246,15 +1205,53 @@ footer {
   margin-right: 8px;
 }
 
-.close {
-  float: right;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
+/* ===============================
+   Modal Close Button Fix
+================================= */
+.modal-content {
+  position: relative; /* Add this to make close button position relative to modal */
 }
 
-.close:hover {
-  color: red;
+.modal-content .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  line-height: 1;
+}
+
+.modal-content .close:hover {
+  color: #ff0000;
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+/* For the compact modal specifically */
+.compact-modal {
+  position: relative; /* Add this */
+}
+
+.compact-modal .close {
+  top: 10px;
+  right: 10px;
+}
+
+/* For the compact modal specifically */
+.compact-modal .close {
+  top: 10px;
+  right: 10px;
 }
 
 @keyframes fadeIn {
