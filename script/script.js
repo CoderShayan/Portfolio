@@ -99,19 +99,34 @@ function setupMessageModal() {
       
       // Get form data
       const formData = {
-        name: document.getElementById('name')?.value || '',
-        email: document.getElementById('email')?.value || '',
-        message: document.getElementById('message')?.value || ''
+        name: document.getElementById('senderName')?.value || '',
+        email: document.getElementById('senderEmail')?.value || '',
+        subject: document.getElementById('emailSubject')?.value || '',
+        message: document.getElementById('messageContent')?.value || ''
       };
       
       console.log('Message form submitted:', formData);
+      
+      // Create the mailto link
+      const mailtoLink = `mailto:its.mshayan@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
+      
+      // Open the email client
+      window.location.href = mailtoLink;
       
       // Create success message if it doesn't exist
       let successMsg = document.querySelector('.message-success');
       if (!successMsg) {
         successMsg = document.createElement('div');
         successMsg.className = 'message-success';
-        successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully!';
+        successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Redirecting to email client...';
+        successMsg.style.background = '#4CAF50';
+        successMsg.style.color = 'white';
+        successMsg.style.padding = '10px';
+        successMsg.style.borderRadius = '5px';
+        successMsg.style.marginTop = '15px';
+        successMsg.style.textAlign = 'center';
         messageForm.appendChild(successMsg);
       }
       
