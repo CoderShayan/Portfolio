@@ -13,31 +13,46 @@ function toggleMenu() {
 // ===============================
 function setupContactModal() {
   const contactBtn = document.getElementById("contactBtn");
+  const heroContactBtn = document.getElementById("heroContactBtn");
   const contactModal = document.getElementById("contactModal");
   const closeBtn = contactModal ? contactModal.querySelector(".close") : null;
 
-  if (contactBtn && contactModal && closeBtn) {
-    // Open modal
+  // Open modal from navbar
+  if (contactBtn && contactModal) {
     contactBtn.addEventListener("click", () => {
       contactModal.style.display = "flex";
       document.body.style.overflow = "hidden"; // Prevent scrolling
     });
+  }
 
-    // Close modal via × button
+  // Open modal from hero section
+  if (heroContactBtn && contactModal) {
+    heroContactBtn.addEventListener("click", () => {
+      contactModal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    });
+  }
+
+  // Close modal via × button
+  if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       contactModal.style.display = "none";
       document.body.style.overflow = "auto"; // Enable scrolling
     });
+  }
 
-    // Close modal by clicking outside
+  // Close modal by clicking outside
+  if (contactModal) {
     window.addEventListener("click", (e) => {
       if (e.target === contactModal) {
         contactModal.style.display = "none";
         document.body.style.overflow = "auto";
       }
     });
+  }
 
-    // Close modal via Escape key
+  // Close modal via Escape key
+  if (contactModal) {
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && contactModal.style.display === "flex") {
         contactModal.style.display = "none";
@@ -84,7 +99,7 @@ function setupMessageModal() {
 
   // Close message modal via Escape key
   if (messageModal) {
-    window.addEventListener("keydown", (e) => {
+    window.addEventListener("keydown", (e) =>{
       if (e.key === "Escape" && messageModal.style.display === "flex") {
         messageModal.style.display = "none";
         document.body.style.overflow = "auto";
@@ -287,21 +302,6 @@ function setupFooterLinks() {
 }
 
 // ===============================
-// Hero Section Contact Button
-// ===============================
-function setupHeroContactButton() {
-  const heroContactBtn = document.getElementById("heroContactBtn");
-  const contactModal = document.getElementById("contactModal");
-
-  if (heroContactBtn && contactModal) {
-    heroContactBtn.addEventListener("click", () => {
-      contactModal.style.display = "flex";
-      document.body.style.overflow = "hidden";
-    });
-  }
-}
-
-// ===============================
 // Scroll Down Button in Hero Section
 // ===============================
 function setupScrollDownButton() {
@@ -323,6 +323,19 @@ function setupScrollDownButton() {
 // Initialize all functionality when DOM is loaded
 // ===============================
 document.addEventListener('DOMContentLoaded', function() {
+  // Setup mobile menu toggle
+  const menuToggle = document.getElementById("menuToggle");
+  if (menuToggle) {
+    menuToggle.addEventListener("click", toggleMenu);
+  }
+
+  // Setup close menu button
+  const closeMenu = document.querySelector(".close-menu");
+  if (closeMenu) {
+    closeMenu.addEventListener("click", toggleMenu);
+  }
+
+  // Initialize all other functionality
   setupContactModal();
   setupMessageModal();
   setupMobileMenu();
@@ -331,7 +344,6 @@ document.addEventListener('DOMContentLoaded', function() {
   setupScrollToTop();
   setupNewsletter();
   setupFooterLinks();
-  setupHeroContactButton();
   setupScrollDownButton();
   
   // Animate Hero Elements on Page Load
