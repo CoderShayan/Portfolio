@@ -1,38 +1,37 @@
-<!--
-#########################################
-  Title: Portfolio | Mohd Shayan Anwar
-  Author: Shayan
-  Date: 17-09-2025
-##########################################-->
+<!--============================
+  Portfolio Website
+  Author: Mohd Shayan Anwar
+  Date: 23/Sept/2023
+================================-->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Mohd Shayan Anwar</title>
     
-    <!-- Custom Stylesheet | CSS -->
     <link rel="stylesheet" href="style/style.css">
-
-    <!-- Custom Script | JS -->
     <script src="script/script.js" defer></script>
-    
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
 
-<!--
-  ============
-    Header
-  ============ -->  
+<!-- ============
+      Header
+     ============ -->  
   <header>
+
     <nav class="navbar">
       <h1 class="logo">&lt;/&gt; <span>ShayanPortfolio</span></h1>
       
       <ul class="nav-links" id="navLinks">
+        <div class="close-menu">
+          <i class="fas fa-times"></i>
+        </div>
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -42,69 +41,62 @@
       </ul>
     
       <!-- Mobile Menu Icon -->
-      <div class="header-icons">
-        <a href="javascript:void(0);" onclick="toggleMenu()">
-          <i class="fas fa-bars"></i>
-        </a>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
       </div>
+    
     </nav>
+
   </header>
   
-<!--
-  ================
-    Hero Section
-  ================ -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-text">
-      <h2 class="intro">Hello, I'm</h2>
-      <h2 class="name">Mohd Shayan Anwar</h2>
-      <p class="tagline">BCA Graduate | Learner | Tech Enthusiast</p>
-      <p class="hero-description">Passionate about creating innovative solutions and expanding my knowledge in technology.</p>
-      <div class="hero-buttons">
-        <a href="#about" class="btn">
-          <i class="fas fa-user"></i> Explore More
-        </a>
-        <a href="javascript:void(0);" id="heroContactBtn" class="btn btn-secondary">
-          <i class="fas fa-paper-plane"></i> Contact Me
-        </a>
+<!-- ================
+      Hero Section
+     ================ -->
+  <section class="hero">
+    
+    <div class="hero-content">
+      
+      <div class="hero-text">
+        <h2 class="intro">Hello, I'm</h2>
+        <h2 class="name">Mohd Shayan Anwar</h2>
+        <p class="tagline">BCA Graduate | Learner | Tech Enthusiast</p>
+        <p class="hero-description">Passionate about creating innovative solutions and expanding my knowledge in technology.</p>
+        
+        <div class="hero-buttons">
+          <a href="#about" class="btn">
+            <i class="fas fa-user"></i> Explore More
+          </a>
+          <a href="javascript:void(0);" id="heroContactBtn" class="btn btn-secondary">
+            <i class="fas fa-paper-plane"></i> Contact Me
+          </a>
+        </div>
+      
       </div>
-    </div>
-    <div class="hero-image">
-      <div class="image-wrapper">
-        <img src="../img/profile-pic.jpg" 
-             alt="Profile Pic">
-        <div class="image-overlay"></div>
-        <div class="floating-icons">
-          <div class="icon html">
-            <i class="fab fa-html5"></i>
-          </div>
-          <div class="icon css">
-            <i class="fab fa-css3-alt"></i>
-          </div>
-          <div class="icon js">
-            <i class="fab fa-js"></i>
-          </div>
-          <div class="icon python">
-            <i class="fab fa-python"></i>
-          </div>
+      
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <img src="profile-pic.jpg" 
+               alt="Profile Pic">
+          <div class="image-overlay"></div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="scroll-down">
-    <span>Scroll Down</span>
-    <div class="arrow">
-      <i class="fas fa-chevron-down"></i>
-    </div>
-  </div>
-</section>
 
-<!--
-  ==========================
-    Contact Modal (Compact)
-  ========================== -->
+    </div>
+    
+    <div class="scroll-down">
+      <span>Scroll Down</span>
+      <div class="arrow">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+  
+  </section>
+
+<!-- ==========================
+      Contact Modal (Compact)
+    ========================== -->
   <div id="contactModal" class="modal">
+    
     <div class="modal-content compact-modal">
       <span class="close">&times;</span>
 
@@ -113,32 +105,38 @@
       <div class="compact-contact-container">
         <!-- Contact Info -->
         <div class="compact-contact-info">
+          <!-- Address -->
           <div class="info-item">
             <i class="fas fa-map-marker-alt"></i>
             <span>Kanpur, Uttar Pradesh</span>
           </div>
+          <!-- Phone -->
           <div class="info-item">
             <i class="fas fa-phone"></i>
             <span>+91-9621021063</span>
           </div>
+          <!-- Email -->
           <div class="info-item">
             <i class="fas fa-envelope"></i>
             <a href="mailto:its.mshayan@gmail.com" target="_blank" title="Email">
               <span>its.mshayan@gmail.com</span>
             </a>
           </div>
+          <!-- LinkedIn -->
           <div class="info-item">
             <i class="fab fa-linkedin"></i>
             <a href="https://www.linkedin.com/in/mohdshayananwar" target="_blank" title="LinkedIn">
               <span>linkedin.com/in/mohdshayananwar</span>
             </a>
           </div>
+          <!-- GitHub -->
           <div class="info-item">
             <i class="fab fa-github"></i>
             <a href="https://github.com/CoderShayan" target="_blank" title="GitHub">
               <span>github.com/CoderShayan</span>
             </a>
           </div>
+        
         </div>
 
         <!-- Quick Action Buttons -->
@@ -153,17 +151,20 @@
 
       </div>
     </div>
+  
   </div>
 
-  <!-- ====================
+<!-- ====================
       About Me Section
-  ==================== -->
+     ==================== -->
   <section id="about" class="section">
     <h2 data-title="ABOUT"><i class="fas fa-user"></i> About Me</h2>
+    
     <div class="section-content">
       <div class="section-icon">
         <i class="fas fa-user"></i>
       </div>
+      
       <div class="section-text">
         <div class="card about-content">
           <p>
@@ -174,126 +175,154 @@
           </p>
         </div>
       </div>
+    
     </div>
+  
   </section>
   
-  <!-- =====================
+<!-- =====================
       Education Section
-  ===================== -->
+     ===================== -->
   <section id="education" class="section">
     <h2 data-title="EDUCATION"><i class="fas fa-graduation-cap"></i> Education</h2>
+    
     <div class="section-content reverse">
       <div class="section-icon">
         <i class="fas fa-graduation-cap"></i>
       </div>
+      
       <div class="section-text">
+        
         <div class="card edu-card">
           <h3><i class="fas fa-university"></i> Bachelor of Computer Applications (B.C.A.)</h3>
           <p>Dr. Virendra Swaroop Institute of Computer Studies, Kanpur | 2024</p>
         </div>
+        
         <div class="card edu-card">
           <h3><i class="fas fa-school"></i> Intermediate (12th)</h3>
           <p>Christ Church Intermediate College, Kanpur | 2021</p>
         </div>
+        
         <div class="card edu-card">
           <h3><i class="fas fa-book"></i> High School (10th)</h3>
           <p>Christ Church Intermediate College, Kanpur | 2019</p>
         </div>
+      
       </div>
     </div>
+  
   </section>
   
 <!-- ==================
       Skills Section
-  ================== -->
+     ================== -->
   <section id="skills" class="section">
     <h2 data-title="SKILLS"><i class="fas fa-laptop-code"></i> Skills</h2>
     <div class="section-content">
       <div class="section-icon">
         <i class="fas fa-laptop-code"></i>
       </div>
+      
       <div class="section-text">
+        
         <div class="card skill-card">
           <h3><i class="fas fa-code"></i> Programming Languages</h3>
           <div class="skills-tags">
             <span>C</span><span>C++</span><span>Java</span><span>Python</span>
           </div>
         </div>
+        
         <div class="card skill-card">
-          <h3><i class="fas fa-project-diagram"></i> OOP Concepts</h3>
+          <h3><i class="fas fa-project-diagram"></i> OOPs Concepts</h3>
           <div class="skills-tags">
             <span>Inheritance</span><span>Encapsulation</span><span>Polymorphism</span><span>Abstraction</span>
           </div>
         </div>
+        
         <div class="card skill-card">
           <h3><i class="fas fa-layer-group"></i> Frameworks</h3>
           <div class="skills-tags">
             <span>Tkinter</span>
           </div>
         </div>
+        
         <div class="card skill-card">
           <h3><i class="fas fa-desktop"></i> Operating Systems</h3>
           <div class="skills-tags">
-            <span>Windows</span><span>Linux (Ubuntu)</span>
+            <span>Windows</span><span>Linux(Ubuntu)</span>
           </div>
         </div>
+        
         <div class="card skill-card">
           <h3><i class="fas fa-user-friends"></i> Soft Skills</h3>
           <div class="skills-tags">
-            <span>Teamwork</span><span>Problem Solving</span><span>Adaptability</span>
+            <span>Teamwork</span><span>Hard Working</span><span>Adaptability</span>
           </div>
         </div>
+        
         <div class="card skill-card">
           <h3><i class="fas fa-globe"></i> Web Technologies</h3>
           <div class="skills-tags">
             <span>HTML</span><span>CSS</span><span>JavaScript</span>
           </div>
         </div>
+        
         <div class="card skill-card">
           <h3><i class="fas fa-tools"></i> Tools</h3>
           <div class="skills-tags">
             <span>Git</span><span>GitHub</span><span>VS Code</span>
           </div>
         </div>
+      
       </div>
+    
     </div>
+  
   </section>
   
-  <!-- ==========================
+<!-- ==========================
       Certifications Section
-  ========================== -->
+     ========================== -->
   <section id="certifications" class="section">
     <h2 data-title="CERTS"><i class="fas fa-award"></i> Certifications</h2>
     <div class="section-content reverse">
       <div class="section-icon">
         <i class="fas fa-award"></i>
       </div>
+      
       <div class="section-text">
+        
         <div class="card cert-card">
           <h3><i class="fas fa-desktop"></i> Certificate in Computing</h3>
           <p>Data Point</p>
         </div>
+        
         <div class="card cert-card">
           <h3><i class="fas fa-mug-hot"></i> Java</h3>
           <p>SK Deft</p>
         </div>
+        
         <div class="card cert-card">
           <h3><i class="fab fa-python"></i> Python</h3>
           <p>Skilling Digitally Xcellent Communities Program</p>
         </div>
+      
       </div>
+    
     </div>
+  
   </section>
   
-  <!-- ====================
+<!-- ===================
       Projects Section
-  ==================== -->
+     =================== -->
   <section id="projects" class="section">
     <h2 data-title="PROJECTS"><i class="fas fa-project-diagram"></i> Projects</h2>
     <div class="section-content">
       <div class="section-icon">
         <i class="fas fa-project-diagram"></i>
       </div>
+      
       <div class="section-text">
         
         <div class="project-card">
@@ -317,46 +346,50 @@
             </div>
           </div>
         </div>
+      
       </div>
+    
     </div>
+  
   </section>
 
-<!-- ====================
+<!-- =====================
      Compact Contact Form
-==================== -->
+  ========================-->
   <div id="messageModal" class="modal">
+    
     <div class="modal-content message-modal">
       <span class="close">&times;</span>
       <div class="form-header">
         <h2><i class="fas fa-paper-plane"></i>Connect With Me</h2>
-        <p>Feel free to send me a message!</p>
       </div>
 
       <form id="messageForm">
-        <div class="form-group">
+        <div class="form-group name">
           <input type="text" id="senderName" name="senderName" placeholder="Your Name" required>
           <i class="fas fa-user"></i>
         </div>
-
-        <div class="form-group">
+      
+        <div class="form-group email">
           <input type="email" id="senderEmail" name="senderEmail" placeholder="Email Address" required>
           <i class="fas fa-envelope"></i>
         </div>
-
-        <div class="form-group">
+      
+        <div class="form-group subject">
           <input type="text" id="emailSubject" name="emailSubject" placeholder="Subject" required>
           <i class="fas fa-tag"></i>
         </div>
-
-        <div class="form-group">
+      
+        <div class="form-group message">
           <textarea id="messageContent" name="messageContent" rows="3" placeholder="Your message..." required></textarea>
           <i class="fas fa-comment"></i>
         </div>
-
+      
         <button type="submit" class="btn message-btn">
           <i class="fas fa-paper-plane"></i> Send Message
         </button>
       </form>
+
     </div>
   </div>
   
@@ -374,23 +407,29 @@
       <div class="footer-section">
         <h3>&lt;/&gt; <span>ShayanPortfolio</span></h3>
         <p>Transforming ideas into digital reality through code and creativity.</p>
+        
         <div class="footer-socials">
           <a href="mailto:its.mshayan@gmail.com" target="_blank" title="Email">
             <i class="fas fa-envelope"></i>
           </a>
+          
           <a href="https://www.linkedin.com/in/mohdshayananwar" target="_blank" title="LinkedIn">
             <i class="fab fa-linkedin"></i>
           </a>
+          
           <a href="https://github.com/CoderShayan" target="_blank" title="GitHub">
             <i class="fab fa-github"></i>
           </a>
+          
           <a href="https://instagram.com/https.shayan.ig" target="_blank" title="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
+          
           <a href="https://www.facebook.com/mohammadshayan.anwar" target="_blank" title="Facebook">
             <i class="fab fa-facebook"></i>
           </a>
         </div>
+      
       </div>
 
       <div class="footer-section">
@@ -413,8 +452,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2025 Mohd Shayan Anwar. All Rights Reserved.</p>
-      
+      <p>&copy; 2025 Mohd Shayan Anwar. All Rights Reserved.</p> 
     </div>
 
     <!-- Scroll to Top Button -->
